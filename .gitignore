@@ -1,0 +1,11 @@
+# Repository-level ignores
+# Ignore the exported project PDF
+build-task-app.pdf
+
+# node / frontend
+task-frontend/node_modules/
+
+# Vite cache
+node_modules/
+.env
+.DS_Store
