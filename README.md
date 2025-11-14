@@ -48,24 +48,4 @@ The frontend dev server runs at `http://localhost:5173` and uses a Vite proxy so
 - `DELETE /api/task-lists/{id}` -> proxied to backend `DELETE /task-lists/{id}`
 - Nested tasks paths follow `/api/task-lists/{taskListId}/tasks...` (proxied to `/task-lists/{taskListId}/tasks...`).
 
-If you inspect the browser Network tab you will see `/api/*` requests (the Vite dev server rewrites them before forwarding to the backend).
 
-**Common troubleshooting**
-- If `GET /api/task-lists` returns objects without `id` values, call the backend directly to confirm what the app receives:
-
-```powershell
-Invoke-RestMethod -Uri 'http://localhost:8080/task-lists' -Method Get -Headers @{Accept='application/json'} | ConvertTo-Json -Depth 5
-```
-
-- If the backend returns UUIDs but the frontend response body lacks them, check proxy rewrites or any frontend mapping code that may transform the response.
-- Ensure the backend process is restarted after code changes so new controller mappings take effect.
-
-**Git / .gitignore notes**
-- The repo contains `.gitignore` files for root, `frontend` and `taskTrackerbackend` with common ignores (node_modules, target, IDE files).
-- Keep local secrets out of source control by adding `.env` to `.gitignore` if you create one.
-
-**If you want help**
-- Tell me which environment you want me to check (frontend or backend) and I can run targeted edits, add logging, or produce reproducible test commands.
-
----
-Generated README — edit as needed for project specifics.
