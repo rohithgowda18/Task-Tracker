@@ -90,10 +90,3 @@ Contributing
 
 License
 - Add a LICENSE file if you plan to open-source this project. (None included by default.)
-
-Contact & help
-- If you want help debugging the backend mapping or finishing missing endpoints (tasks CRUD), tell me which area to work on and I can produce focused patches and test commands.
-
----
-This README was updated to be more actionable and professional. Edit any paths or commands if your environment differs.
-
